@@ -19,7 +19,9 @@ app.post('/', (req, res) => {
     fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
         .then(response => response.json())
         .then (response => res.json(response))
-        .catch(err => console.error(err,));
+        .catch(err => {
+            res.json(err, "1")
+            console.error(err, "2")});
     // const response = {
     //     status: 'success',
     //     totalGlycemicLoad: 6.64,
