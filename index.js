@@ -23,7 +23,7 @@ app.post('/', (req, res) => {
         method: 'POST',
         body:`{ "ingredients":[ "1 apple" ] }`
     };
-    fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
+    fetch(`https://api.spoonacular.com/food/ingredients/glyceicLoad?apiKey=${process.env.API_KEY}`, options)
         .then(response => response.json())
         .then (response => res.json(response))
         .catch(err => {
