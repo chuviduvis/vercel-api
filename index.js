@@ -20,8 +20,7 @@ app.post('/', (req, res) => {
     };
     fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
         .then(response => {
-          const x = response.body
-          return res.json(x)})
+          return res.json(response)})
         .catch(err => {
             return res.json(err)
             console.error(err, "2")});
