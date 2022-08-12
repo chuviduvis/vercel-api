@@ -11,27 +11,27 @@ app.use(bodyparser.json())
 
 app.post('/', (req, res) => {
     // console.log(req.body)
-    // const Body = JSON.stringify(req.body)
-    // const options = {
-    //     method: 'POST',
-    //     body: `${Body}`
-    // };
-    // fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
-    //     .then(response => response.json())
-    //     .then (response => res.json(response))
-    //     .catch(err => console.error(err,));
-    const response = {
-        status: 'success',
-        totalGlycemicLoad: 6.64,
-        ingredients: [
-          {
-            original: '1 apple',
-            glycemicIndex: 32,
-            glycemicLoad: 6.64
-          }
-        ]
-      }
-      res.json(response)
+    const Body = JSON.stringify(req.body)
+    const options = {
+        method: 'POST',
+        body: `${Body}`
+    };
+    fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
+        .then(response => response.json())
+        .then (response => res.json(response))
+        .catch(err => console.error(err,));
+    // const response = {
+    //     status: 'success',
+    //     totalGlycemicLoad: 6.64,
+    //     ingredients: [
+    //       {
+    //         original: '1 apple',
+    //         glycemicIndex: 32,
+    //         glycemicLoad: 6.64
+    //       }
+    //     ]
+    //   }
+    //   res.json(response)
 
     // res.json('Hey this is my API running 🥳')
   })
