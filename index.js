@@ -11,10 +11,10 @@ app.use(bodyparser.json())
 
 app.post('/', (req, res) => {
     // console.log(req.body)
-    const Body = JSON.stringify(req.body)
+  
     const options = {
         method: 'POST',
-        body: `${Body}`
+        body:`{ "ingredients":[ "1 apple" ] }`
     };
     fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
         .then(response => response.json())
