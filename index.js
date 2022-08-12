@@ -14,28 +14,28 @@ app.post('/', (req, res) => {
   
 
   
-    // const options = {
-    //     method: 'POST',
-    //     body:`{ "ingredients":[ "1 apple" ] }`
-    // };
-    // fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
-    //     .then(response => response.json())
-    //     .then (response => res.json(response))
-    //     .catch(err => {
-    //         res.json(err)
-    //         console.error(err, "2")});
-    const response = {
-        status: 'success',
-        totalGlycemicLoad: 6.64,
-        ingredients: [
-          {
-            original: '1 apple',
-            glycemicIndex: 32,
-            glycemicLoad: 6.64
-          }
-        ]
-      }
-      res.json(response)
+    const options = {
+        method: 'POST',
+        body:`{ "ingredients":[ "1 apple" ] }`
+    };
+    fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
+        .then(response => response.json())
+        .then (response => res.json(response))
+        .catch(err => {
+            res.json(err)
+            console.error(err, "2")});
+    // const response = {
+    //     status: 'success',
+    //     totalGlycemicLoad: 6.64,
+    //     ingredients: [
+    //       {
+    //         original: '1 apple',
+    //         glycemicIndex: 32,
+    //         glycemicLoad: 6.64
+    //       }
+    //     ]
+    //   }
+    //   res.json(response)
 
     //   res.json('Hey this is my API running 🥳')
   })
