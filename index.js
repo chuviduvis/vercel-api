@@ -5,29 +5,30 @@ require('dotenv').config()
 const app = express()
 const bodyparser = require('body-parser')
 
-// app.use(cors())
+app.use(cors())
 // app.use(bodyparser.json())
 
 
 app.get('/', (req, res) => {
     // console.log(req.body)
+    objeto = {
+      noapikey: true
+    }
+    res.json(objeto)
     if(process.env.API_KEY === undefined){
-      objeto = {
-        noapikey: true
-      }
-      res.json(objeto)
+     
 
     }
-    const options = {
-        method: 'POST',
-        body:`{ "ingredients":[ "1 apple" ] }`
-    };
-    fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
-        .then(response => response.json())
-        .then (response => res.json(response))
-        .catch(err => {
-            res.json(err)
-            console.error(err, "2")});
+    // const options = {
+    //     method: 'POST',
+    //     body:`{ "ingredients":[ "1 apple" ] }`
+    // };
+    // fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
+    //     .then(response => response.json())
+    //     .then (response => res.json(response))
+    //     .catch(err => {
+    //         res.json(err)
+    //         console.error(err, "2")});
     // const response = {
     //     status: 'success',
     //     totalGlycemicLoad: 6.64,
