@@ -8,7 +8,7 @@ const bodyparser = require('body-parser')
 
 
 app.use(cors())
-// app.use(bodyparser.json())
+app.use(bodyparser.json())
 
 
 app.get('/*', (req, res) => {
