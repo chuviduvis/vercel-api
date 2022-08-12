@@ -6,11 +6,13 @@ const app = express()
 const bodyparser = require('body-parser')
 
 
+
 app.use(cors())
-app.use(bodyparser.json())
+// app.use(bodyparser.json())
 
 
-app.post('/*', (req, res) => {
+app.get('/*', (req, res) => {
+
     // console.log(req.path)
 
     // const response = {
