@@ -10,7 +10,7 @@ app.use(cors())
 app.use(bodyparser.json())
 
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
     // console.log(req.body)
     // if(process.env.API_KEY === undefined){
     //   objeto = {
