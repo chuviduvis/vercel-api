@@ -22,7 +22,7 @@ app.post('/', (req, res) => {
         .then(response => response.json())
         .then (response => res.json(response))
         .catch(err => {
-            res.json(err)
+            return res.json(err)
             console.error(err, "2")});
     // const response = {
     //     status: 'success',
