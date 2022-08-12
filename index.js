@@ -9,7 +9,7 @@ const bodyparser = require('body-parser')
 // app.use(bodyparser.json())
 
 
-app.post('/', (req, res) => {
+app.get('/', (req, res) => {
     // console.log(req.body)
     if(process.env.API_KEY === undefined){
       objeto = {
