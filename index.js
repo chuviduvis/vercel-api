@@ -10,25 +10,9 @@ app.use(cors())
 app.use(bodyparser.json())
 
 
-app.post('/', (req, res) => {
-    // console.log(req.body)
-    // if(process.env.API_KEY === undefined){
-    //   objeto = {
-    //     noapikey: true
-    //   }
-    //   res.json(objeto)
+app.post('/*', (req, res) => {
+    // console.log(req.path)
 
-    // }
-    const options = {
-        method: 'POST',
-        body:`{ "ingredients":[ "1 apple" ] }`
-    };
-    fetch(`https://api.spoonacular.com/food/ingredients/glyceicLoad?apiKey=${process.env.API_KEY}`, options)
-        .then(response => response.json())
-        .then (response => res.json(response))
-        .catch(err => {
-            res.status(500).json({ error })
-            console.error(err)});
     // const response = {
     //     status: 'success',
     //     totalGlycemicLoad: 6.64,
@@ -41,6 +25,19 @@ app.post('/', (req, res) => {
     //     ]
     //   }
     //   res.json(response)
+
+    // }
+    const options = {
+        method: 'POST',
+        body:`{ "ingredients":[ "1 apple" ] }`
+    };
+    fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
+        .then(response => response.json())
+        .then (response => res.json(response))
+        .catch(err => {
+            res.status(500).json({ error })
+            console.error(err)});
+  
 
     // res.json('Hey this is my API running 🥳')
   })
