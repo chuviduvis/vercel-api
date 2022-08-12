@@ -4,7 +4,7 @@ const cors = require('cors')
 require('dotenv').config()
 const app = express()
 const bodyparser = require('body-parser')
-const { json } = require('body-parser')
+
 
 app.use(cors())
 app.use(bodyparser.json())
@@ -27,7 +27,7 @@ app.post('/', (req, res) => {
         .then(response => response.json())
         .then (response => res.json(response))
         .catch(err => {
-            res.status(500),json({ error})
+            res.status(500).json({ error})
             console.error(err)});
     // const response = {
     //     status: 'success',
