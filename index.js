@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     // console.log(req.body)
   
  
-    if(process.env.API_KEY === undefined){
+    if(process.env.API_KEY === "07016277fd154dbda347300bfef8048d"){
       objeto = {
         noapikey: true
       }
