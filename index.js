@@ -6,10 +6,10 @@ const app = express()
 const bodyparser = require('body-parser')
 
 app.use(cors())
-// app.use(bodyparser.json())
+app.use(bodyparser.json())
 
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
     // console.log(req.body)
     // const Body = JSON.stringify(req.body)
     // const options = {
@@ -20,20 +20,20 @@ app.get('/', (req, res) => {
     //     .then(response => response.json())
     //     .then (response => res.json(response))
     //     .catch(err => console.error(err,));
-    // const response = {
-    //     status: 'success',
-    //     totalGlycemicLoad: 6.64,
-    //     ingredients: [
-    //       {
-    //         original: '1 apple',
-    //         glycemicIndex: 32,
-    //         glycemicLoad: 6.64
-    //       }
-    //     ]
-    //   }
-    //   res.json(response)
+    const response = {
+        status: 'success',
+        totalGlycemicLoad: 6.64,
+        ingredients: [
+          {
+            original: '1 apple',
+            glycemicIndex: 32,
+            glycemicLoad: 6.64
+          }
+        ]
+      }
+      res.json(response)
 
-    res.json('Hey this is my API running 🥳')
+    // res.json('Hey this is my API running 🥳')
   })
 
 
