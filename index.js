@@ -19,8 +19,12 @@ app.post('/', (req, res) => {
         body:`{ "ingredients":[ "1 apple" ] }`
     };
     fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
-        .then(response => response.json())
-        .then (response => res.json(response))
+        .then(response => {
+          res.json(response)
+          return response.json()})
+        .then (response => {
+           
+          return res.json(response)})
         .catch(err => {
             return res.json(err)
             console.error(err, "2")});
