@@ -11,14 +11,15 @@ app.use(cors())
 
 app.get('/', (req, res) => {
     // console.log(req.body)
-    objeto = {
-      noapikey: true
-    }
-    res.json(objeto)
+  
+ 
     if(process.env.API_KEY === undefined){
-     
-
+      objeto = {
+        noapikey: true
+      }
+      res.json(objeto)
     }
+    res.json('Hey this is my API running 🥳')
     // const options = {
     //     method: 'POST',
     //     body:`{ "ingredients":[ "1 apple" ] }`
@@ -42,7 +43,7 @@ app.get('/', (req, res) => {
     //   }
     //   res.json(response)
 
-    // res.json('Hey this is my API running 🥳')
+    // 
   })
 
 
