@@ -12,14 +12,8 @@ app.use(bodyparser.json())
 app.post('/', (req, res) => {
     // console.log(req.body)
   
- 
-    if(process.env.API_KEY === "07016277fd154dbda347300bfef8048d"){
-      objeto = {
-        noapikey: true
-      }
-      res.json(objeto)
-    }
-    res.json('Hey this is my API running 🥳')
+
+  
     // const options = {
     //     method: 'POST',
     //     body:`{ "ingredients":[ "1 apple" ] }`
@@ -30,20 +24,20 @@ app.post('/', (req, res) => {
     //     .catch(err => {
     //         res.json(err)
     //         console.error(err, "2")});
-    // const response = {
-    //     status: 'success',
-    //     totalGlycemicLoad: 6.64,
-    //     ingredients: [
-    //       {
-    //         original: '1 apple',
-    //         glycemicIndex: 32,
-    //         glycemicLoad: 6.64
-    //       }
-    //     ]
-    //   }
-    //   res.json(response)
+    const response = {
+        status: 'success',
+        totalGlycemicLoad: 6.64,
+        ingredients: [
+          {
+            original: '1 apple',
+            glycemicIndex: 32,
+            glycemicLoad: 6.64
+          }
+        ]
+      }
+      res.json(response)
 
-    // 
+    //   res.json('Hey this is my API running 🥳')
   })
 
 
