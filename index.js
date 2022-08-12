@@ -29,19 +29,19 @@ app.get('/*', (req, res) => {
     //   res.json(response)
 
     // }
-    const options = {
-        method: 'POST',
-        body:`{ "ingredients":[ "1 apple" ] }`
-    };
-    fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
-        .then(response => response.json())
-        .then (response => res.json(response))
-        .catch(err => {
-            res.status(500).json({ error })
-            console.error(err)});
+    // const options = {
+    //     method: 'POST',
+    //     body:`{ "ingredients":[ "1 apple" ] }`
+    // };
+    // fetch(`https://api.spoonacular.com/food/ingredients/glycemicLoad?apiKey=${process.env.API_KEY}`, options)
+    //     .then(response => response.json())
+    //     .then (response => res.json(response))
+    //     .catch(err => {
+    //         res.status(500).json({ error })
+    //         console.error(err)});
   
 
-    // res.json('Hey this is my API running 🥳')
+    res.json('Hey this is my API running 🥳')
   })
 
 
